@@ -1,0 +1,212 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+header {
+    background-color: #efaa16db;
+    color: #3c2c0c;
+    padding: 15px;
+}
+main {
+    margin-bottom: 50px;  /* Відступ перед футером */
+}
+footer {
+    background-color: #3c2c0c;
+    color: rgb(240, 230, 214);
+    padding: 10px;
+}
+nav {
+    background-color: none; /* Колір фону */
+    padding: 10px 0; /* Відступи зверху та знизу */
+    text-align: center; /* Вирівнювання по центру */
+}
+nav a {
+    text-decoration: none; /* Видаляє підкреслення */
+    color: rgb(252, 247, 240); /* колір тексту */
+    font-size: 18px;
+    padding: 10px 20px; /* Внутрішні відступи */
+    margin: 0 20px; /* Проміжок між елементами */
+    background-color: #d98403; /* Колір кнопок */
+    border-radius: 25px; /* Закруглення кнопок */
+    transition: 0.2s; /* Анімація */
+}
+nav a:hover {
+    background-color: #3c2c0c; /* Колір при наведенні */
+}
+h2 {
+    color: #3c2c0c; /* Вибери бажаний колір */
+    text-align: center;
+    font-size: 28px;
+    margin-top: 30px;
+}
+/* Грид для категорій */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Гнучкі колонки */
+    gap: 30px;
+    padding: 30px;
+    text-align: center;
+}
+/* Оформлення картки */
+.category {
+    text-decoration: none;
+    color: black;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.2s;
+    box-shadow: 0 4px 8px rgba(58, 26, 1, 0.2);
+}
+.category img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover; /* Щоб зображення не деформувалися */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.category h3 {
+    background-color: #d98403;
+    color: rgb(252, 247, 240);
+    padding: 10px;
+    margin: 0;
+}
+/* Ефект при наведенні */
+.category:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(58, 26, 1, 0.2);
+}
+.recipe-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.recipe-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background: rgb(250, 230, 204);
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(58, 26, 1, 0.2);
+    padding: 15px;
+    transition: transform 0.2s;
+}
+.recipe-item:hover {
+    transform: scale(1.02);
+}
+.recipe-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+.recipe-info h3 {
+    color: #3c2c0c;
+    margin: 0 0 5px;
+}
+.recipe-info p {
+    margin: 3px 0;
+    font-size: 15px;
+    color: #3c2c0cdc;
+    text-align: left;
+    flex-grow: 1;
+}
+.comments-list {
+    margin-top: 20px;
+}
+.comment {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #e5dcd3;
+}
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 30%;
+    margin-right: 15px;
+}
+.comment-content h3 {
+    color: #3c2c0c;
+    margin: 0;
+    font-size: 18px;
+    text-align: left;
+}
+.comment-content p {
+    color: #3c2c0c;
+    margin: 5px 0;
+    text-align: left;
+}
+.date {
+    font-size: 12px;
+    color: #3c2c0caf;
+}
+.add-comment {
+    margin-top: 30px;
+}
+.add-comment form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.add-comment input,
+.add-comment textarea {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #e5dcd3;
+    border-radius: 5px;
+}
+.add-comment button {
+    background-color: #d98403;
+    color: rgb(252, 247, 240);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+    /* Робимо категорії вертикальними */
+    .categories-grid {
+        grid-template-columns: 1fr; /* Одна колонка */
+    }
+
+    /* Робимо рецепти більш компактними */
+    .recipe-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .recipe-item img {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    /* Вирівнюємо коментарі */
+    .comment {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .avatar {
+        margin-bottom: 10px;
+    }
+}
+/* Адаптація для дуже маленьких екранів (до 480px) */
+@media (max-width: 480px) {
+    nav a {
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+        text-align: center;
+    }
+
+    .add-comment input,
+    .add-comment textarea {
+        width: 100%;
+    }
+}
