@@ -8,48 +8,32 @@
 </head>
 <body>
     <header>
-        <h2>Платформа для обміну рецептами</h2>
+        <h1>Платформа для обміну рецептами</h1>
         <nav>
-             <a href="recipes.html">Мої рецепти</a></li>
-             <a href="index.html">Категорії</a></li>
-             <a href="comments.html">Коментарі</a></li>
+             <a href="recipes.html">Мої рецепти</a>
+             <a href="index.html">Категорії</a>
+             <a href="comments.html">Коментарі</a>
         </nav>
     </header>
     <main>
-        <h2>Відгуки користувачів</h2>
-    
-        <section class="comments-list">
-            <div class="comment">
-                <img src="img\avatar1.jpg" alt="Аватар" class="avatar">
-                <div class="comment-content">
-                    <h3>Віктор</h3>
-                    <p>Найкращі пельмені в моєму житті!!😍</p>
-                    <span class="date">7 березня 2025</span>
-                </div>
-            </div>
-    
-            <div class="comment">
-                <img src="img\avatar2.jpg" alt="Аватар" class="avatar">
-                <div class="comment-content">
-                    <h3>Софія</h3>
-                    <p>Дуже смачний тортик! Вже чекаю щоб пригостити свою Лєрочку😊</p>
-                    <span class="date">10 березня 2025</span>
-                </div>
-            </div>
-        </section>
-    
-        <section class="add-comment">
+        <section class="comments">
             <h2>Залишити коментар</h2>
-            <form>
-                <input type="text" placeholder="Ваше ім'я" required>
-                <textarea placeholder="Ваш коментар..." required></textarea>
+            <form id="comment-form" class="comment-form">
+                <label for="name">Ім’я:</label>
+                <input type="text" id="name" name="name" required>
+            
+                <label for="comment">Коментар:</label>
+                <textarea id="comment" name="comment" rows="5" required></textarea>
+            
                 <button type="submit">Додати коментар</button>
             </form>
-        </section>
+            <div id="commentsContainer"></div>
+          </section>
     </main>    
     <footer>
         <p>Контакти: info@recipes.com</p>
         <p>&copy; 2025 Платформа для обміну рецептами</p>
-    </footer>    
+    </footer> 
+    <script src="script.js"></script>   
 </body>
 </html>

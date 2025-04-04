@@ -5,12 +5,15 @@ body {
     text-align: center;
 }
 header {
-    background-color: #efaa16db;
+    background-color: #efaa16db; 
     color: #3c2c0c;
     padding: 15px;
 }
+header h1 {
+    display: block; 
+}
 main {
-    margin-bottom: 50px;  /* Відступ перед футером */
+    margin-bottom: 50px;
 }
 footer {
     background-color: #3c2c0c;
@@ -18,38 +21,36 @@ footer {
     padding: 10px;
 }
 nav {
-    background-color: none; /* Колір фону */
-    padding: 10px 0; /* Відступи зверху та знизу */
-    text-align: center; /* Вирівнювання по центру */
+    background-color: none;
+    padding: 10px 0;
+    text-align: center;
 }
 nav a {
-    text-decoration: none; /* Видаляє підкреслення */
-    color: rgb(252, 247, 240); /* колір тексту */
+    text-decoration: none;
+    color: rgb(252, 247, 240);
     font-size: 18px;
-    padding: 10px 20px; /* Внутрішні відступи */
-    margin: 0 20px; /* Проміжок між елементами */
-    background-color: #d98403; /* Колір кнопок */
-    border-radius: 25px; /* Закруглення кнопок */
-    transition: 0.2s; /* Анімація */
+    padding: 10px 20px;
+    margin: 0 20px;
+    background-color: #d98403;
+    border-radius: 25px;
+    transition: 0.2s;
 }
 nav a:hover {
-    background-color: #3c2c0c; /* Колір при наведенні */
+    background-color: #3c2c0c;
 }
 h2 {
-    color: #3c2c0c; /* Вибери бажаний колір */
+    color: #3c2c0c;
     text-align: center;
     font-size: 28px;
     margin-top: 30px;
 }
-/* Грид для категорій */
 .categories-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Гнучкі колонки */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
     padding: 30px;
     text-align: center;
 }
-/* Оформлення картки */
 .category {
     text-decoration: none;
     color: black;
@@ -61,7 +62,7 @@ h2 {
 .category img {
     width: 100%;
     height: 150px;
-    object-fit: cover; /* Щоб зображення не деформувалися */
+    object-fit: cover;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -71,20 +72,21 @@ h2 {
     padding: 10px;
     margin: 0;
 }
-/* Ефект при наведенні */
 .category:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(58, 26, 1, 0.2);
 }
 .recipe-list {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 20px;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
+    justify-content: center;
 }
 .recipe-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
     text-decoration: none;
     background: rgb(250, 230, 204);
@@ -92,16 +94,16 @@ h2 {
     box-shadow: 0 4px 8px rgba(58, 26, 1, 0.2);
     padding: 15px;
     transition: transform 0.2s;
+    width: 300px;
 }
 .recipe-item:hover {
     transform: scale(1.02);
 }
 .recipe-item img {
-    width: 120px;
-    height: 120px;
+    width: 100%;
+    height: auto;
     object-fit: cover;
     border-radius: 10px;
-    margin-right: 15px;
 }
 .recipe-info h3 {
     color: #3c2c0c;
@@ -126,7 +128,7 @@ h2 {
 .avatar {
     width: 60px;
     height: 60px;
-    border-radius: 30%;
+    border-radius: 50%;
     margin-right: 15px;
 }
 .comment-content h3 {
@@ -144,50 +146,54 @@ h2 {
     font-size: 12px;
     color: #3c2c0caf;
 }
-.add-comment {
-    margin-top: 30px;
-}
-.add-comment form {
+.comment-form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-.add-comment input,
-.add-comment textarea {
-    width: 80%;
-    padding: 10px;
-    margin-bottom: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 12px;
+    padding: 20px;
+    background-color: #fdfdfd;
     border: 1px solid #e5dcd3;
-    border-radius: 5px;
+    border-radius: 8px;
 }
-.add-comment button {
-    background-color: #d98403;
-    color: rgb(252, 247, 240);
+.comment-form label {
+    font-weight: bold;
+    color: #3c2c0c;
+}
+.comment-form input,
+.comment-form textarea {
     padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #e5dcd3;
+    resize: vertical;
 }
-/* Адаптивність для мобільних пристроїв */
+.comment-form button {
+    align-self: flex-start;
+    padding: 10px 20px;
+    background-color: #d98403;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.comment-form button:hover {
+    background-color: #3c2c0c;
+}
 @media (max-width: 768px) {
-    /* Робимо категорії вертикальними */
     .categories-grid {
-        grid-template-columns: 1fr; /* Одна колонка */
+        grid-template-columns: 1fr;
     }
-
-    /* Робимо рецепти більш компактними */
-    .recipe-item {
+    .recipe-list {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
-    .recipe-item img {
-        width: 100%;
-        height: auto;
-        margin-right: 0;
-        margin-bottom: 10px;
+    .recipe-item {
+        width: 90%;
     }
-
-    /* Вирівнюємо коментарі */
     .comment {
         flex-direction: column;
         align-items: flex-start;
@@ -196,7 +202,6 @@ h2 {
         margin-bottom: 10px;
     }
 }
-/* Адаптація для дуже маленьких екранів (до 480px) */
 @media (max-width: 480px) {
     nav a {
         display: block;
@@ -204,7 +209,6 @@ h2 {
         width: 80%;
         text-align: center;
     }
-
     .add-comment input,
     .add-comment textarea {
         width: 100%;
